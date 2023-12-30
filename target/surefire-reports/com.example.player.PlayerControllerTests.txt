@@ -1,0 +1,45 @@
+-------------------------------------------------------------------------------
+Test set: com.example.player.PlayerControllerTests
+-------------------------------------------------------------------------------
+Tests run: 13, Failures: 1, Errors: 3, Skipped: 0, Time elapsed: 50.998 s <<< FAILURE! - in com.example.player.PlayerControllerTests
+testputNotFound  Time elapsed: 0.296 s  <<< ERROR!
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.springframework.dao.EmptyResultDataAccessException: Incorrect result size: expected 1, actual 0
+	at com.example.player.PlayerControllerTests.testputNotFound(PlayerControllerTests.java:229)
+Caused by: org.springframework.dao.EmptyResultDataAccessException: Incorrect result size: expected 1, actual 0
+	at com.example.player.PlayerControllerTests.testputNotFound(PlayerControllerTests.java:229)
+
+testdeleteNotFound  Time elapsed: 1.3 s  <<< ERROR!
+org.springframework.web.util.NestedServletException: 
+Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [delete from player where playerId=?]; nested exception is org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PLAYER" not found; SQL statement:
+delete from player where playerId=? [42102-214]
+	at com.example.player.PlayerControllerTests.testdeleteNotFound(PlayerControllerTests.java:280)
+Caused by: org.springframework.jdbc.BadSqlGrammarException: 
+PreparedStatementCallback; bad SQL grammar [delete from player where playerId=?]; nested exception is org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PLAYER" not found; SQL statement:
+delete from player where playerId=? [42102-214]
+	at com.example.player.PlayerControllerTests.testdeleteNotFound(PlayerControllerTests.java:280)
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Table "PLAYER" not found; SQL statement:
+delete from player where playerId=? [42102-214]
+	at com.example.player.PlayerControllerTests.testdeleteNotFound(PlayerControllerTests.java:280)
+
+testdelete  Time elapsed: 0.009 s  <<< ERROR!
+org.springframework.web.util.NestedServletException: 
+Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [delete from player where playerId=?]; nested exception is org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PLAYER" not found; SQL statement:
+delete from player where playerId=? [42102-214]
+	at com.example.player.PlayerControllerTests.testdelete(PlayerControllerTests.java:290)
+Caused by: org.springframework.jdbc.BadSqlGrammarException: 
+PreparedStatementCallback; bad SQL grammar [delete from player where playerId=?]; nested exception is org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PLAYER" not found; SQL statement:
+delete from player where playerId=? [42102-214]
+	at com.example.player.PlayerControllerTests.testdelete(PlayerControllerTests.java:290)
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Table "PLAYER" not found; SQL statement:
+delete from player where playerId=? [42102-214]
+	at com.example.player.PlayerControllerTests.testdelete(PlayerControllerTests.java:290)
+
+testafterdelete  Time elapsed: 0.296 s  <<< FAILURE!
+java.lang.AssertionError: 
+JSON path "$"
+Expected: a collection with size <11>
+     but: collection size was <12>
+	at com.example.player.PlayerControllerTests.testafterdelete(PlayerControllerTests.java:297)
+
